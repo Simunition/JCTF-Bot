@@ -15,6 +15,10 @@ client.on('interactionCreate', async interaction => {
 		await interaction.reply('Pong!');
 	}
 
+	if (interaction.commandName === 'hello') {
+		await interaction.reply('Hello ' + interaction.user.username + '!');
+	}
+
 	if (interaction.commandName === 'givemetheflag') {
 		await interaction.reply({ content: 'flag{disc0rd_flag_98725}', ephemeral: true });
 	}
