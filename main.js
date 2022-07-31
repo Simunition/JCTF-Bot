@@ -22,6 +22,14 @@ client.on('interactionCreate', async interaction => {
 	if (interaction.commandName === 'givemetheflag') {
 		await interaction.reply({ content: 'flag{disc0rd_flag_98725}', ephemeral: true });
 	}
+
+	if (interaction.commandName === 'start_instance') {
+		if (interaction.channelId != "1003131135620022272") {
+			await interaction.reply({ content: 'Sorry.. You have to be an admin to use this command', ephemeral: true});
+		} else {
+			await interaction.reply({ content: 'Starting instance...'});
+		}
+	}
 });
 
 client.login(token);
