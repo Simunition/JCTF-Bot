@@ -30,6 +30,30 @@ client.on('interactionCreate', async interaction => {
 			await interaction.reply({ content: 'Starting instance...'});
 		}
 	}
+
+	if (interaction.commandName === 'stop_instance') {
+		if (interaction.channelId != "1003131135620022272") {
+			await interaction.reply({ content: 'Sorry.. You have to be an admin to use this command', ephemeral: true});
+		} else {
+			await interaction.reply({ content: 'Stopping instance...'});
+		}
+	}
+
+	if (interaction.commandName === 'terminate_instance') {
+		if (interaction.channelId != "1003131135620022272") {
+			await interaction.reply({ content: 'Sorry.. You have to be an admin to use this command', ephemeral: true});
+		} else {
+			await interaction.reply({ content: 'Terminating instance...'});
+		}
+	}
+
+	if (interaction.commandName === 'restore_instance_snapshot') {
+		if (interaction.channelId != "1003131135620022272") {
+			await interaction.reply({ content: 'Sorry.. You have to be an admin to use this command', ephemeral: true});
+		} else {
+			await interaction.reply({ content: 'Restoring instance snapshot...'});
+		}
+	}
 });
 
 client.login(token);
