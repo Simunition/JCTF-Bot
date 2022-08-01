@@ -22,7 +22,52 @@ const commands = [
 		.addStringOption(option =>
 			option.setName('instance')
 			.setDescription('The instance to start')
-			.setRequired(true))
+			.setRequired(true)
+      .addChoices(
+        { name: 'Easy', value: 'easy' },
+        { name: 'Medium', value: 'medium' },
+        { name: 'Hard', value: 'hard' },
+        { name: 'Insane', value: 'insane'}
+      )),
+  new SlashCommandBuilder()
+  .setName('stop_instance')
+  .setDescription('Start given instance')
+  .addStringOption(option =>
+    option.setName('instance')
+    .setDescription('The instance to start')
+    .setRequired(true)
+    .addChoices(
+      { name: 'Easy', value: 'easy' },
+      { name: 'Medium', value: 'medium' },
+      { name: 'Hard', value: 'hard' },
+      { name: 'Insane', value: 'insane'}
+    )),
+  new SlashCommandBuilder()
+  .setName('terminate_instance')
+  .setDescription('Start given instance')
+  .addStringOption(option =>
+    option.setName('instance')
+    .setDescription('The instance to start')
+    .setRequired(true)
+    .addChoices(
+      { name: 'Easy', value: 'easy' },
+      { name: 'Medium', value: 'medium' },
+      { name: 'Hard', value: 'hard' },
+      { name: 'Insane', value: 'insane'}
+    )),
+  new SlashCommandBuilder()
+  .setName('restore_instance_snapshot')
+  .setDescription('Start given instance')
+  .addStringOption(option =>
+    option.setName('instance')
+    .setDescription('The instance to start')
+    .setRequired(true)
+    .addChoices(
+      { name: 'Easy', value: 'easy' },
+      { name: 'Medium', value: 'medium' },
+      { name: 'Hard', value: 'hard' },
+      { name: 'Insane', value: 'insane'}
+    ))
 ].map(command => command.toJSON());
 
 const rest = new REST({ version: '10' }).setToken(token);
